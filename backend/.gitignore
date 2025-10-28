@@ -30,3 +30,5 @@ Thumbs.db
 *.sql
 *.sqlite
 *.db
+.env
+
