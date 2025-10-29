@@ -4,13 +4,20 @@ import Home from './pages/Home';
 import CartPage from './pages/CartPage';
 import Register from './pages/Register';
 import Login from './pages/Login';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { NotificationProvider } from './context/NotificationContext';
 import Notification from './components/Notification';
 
+//  Header Component
 function Header() {
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout(); // clears token + user from localStorage
+    navigate('/login');
+  };
 
   return (
     <header className="app-header">
@@ -18,17 +25,29 @@ function Header() {
         Nexora Mock E-Com
       </h1>
       <div className="header-buttons">
-        <button className="auth-btn" onClick={() => navigate('/login')}>
-          Login
-        </button>
-        <button className="auth-btn secondary" onClick={() => navigate('/register')}>
-          Register
-        </button>
+        {user ? (
+          <>
+            <span className="user-name">Hi, {user.name}</span>
+            <button className="auth-btn logout" onClick={handleLogout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <button className="auth-btn" onClick={() => navigate('/login')}>
+              Login
+            </button>
+            <button className="auth-btn secondary" onClick={() => navigate('/register')}>
+              Register
+            </button>
+          </>
+        )}
       </div>
     </header>
   );
 }
 
+//  Main App Component
 export default function App() {
   return (
     <Router>
