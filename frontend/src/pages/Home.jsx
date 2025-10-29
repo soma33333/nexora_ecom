@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ProductList from '../components/ProductList'
-import Cart from '../components/Cart'
-
+import { useNavigate } from 'react-router-dom'
 
 export default function Home(){
-const [showCart, setShowCart] = useState(false)
+  const navigate = useNavigate()
 
-
-return (
-<div className="page-container">
-<div className="top-row">
-<button className="open-cart-btn" onClick={() => setShowCart(true)}>Open Cart</button>
-</div>
-<div className="content-grid">
-<ProductList />
-{showCart && <Cart onClose={() => setShowCart(false)} />}
-</div>
-</div>
-)
+  return (
+    <div className="page-container">
+      <div className="top-row">
+        <button className="open-cart-btn" onClick={() => navigate('/cart')}>Open Cart</button>
+      </div>
+      <div className="content-grid">
+        <ProductList />
+      </div>
+    </div>
+  )
 }

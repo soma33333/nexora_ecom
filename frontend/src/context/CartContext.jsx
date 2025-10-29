@@ -1,18 +1,19 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useNotification } from './NotificationContext'; // ✅ NEW IMPORT
 
-// Create the context
 const CartContext = createContext();
 
-// Custom hook to use the cart context
+// Custom hook
 export function useCart() {
   return useContext(CartContext);
 }
 
-// CartProvider component
+// CartProvider
 export function CartProvider({ children }) {
   const [cart, setCart] = useState({ items: [] });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const { showNotification } = useNotification(); // ✅ get notifier
 
   // Fetch cart from backend
   async function fetchCart() {
@@ -40,8 +41,10 @@ export function CartProvider({ children }) {
       });
       if (!res.ok) throw new Error('Add to cart failed');
       await fetchCart();
+      showNotification('✅ Item added to cart'); // ✅ show success msg
     } catch (err) {
       setError(err.message);
+      showNotification('❌ Failed to add item');
     } finally {
       setLoading(false);
     }
@@ -54,8 +57,10 @@ export function CartProvider({ children }) {
       const res = await fetch(`/api/cart/${cartItemId}`, { method: 'DELETE' });
       if (!res.ok) throw new Error('Remove failed');
       await fetchCart();
+      showNotification('🗑️ Item removed from cart'); // ✅
     } catch (err) {
       setError(err.message);
+      showNotification('❌ Failed to remove item');
     } finally {
       setLoading(false);
     }
@@ -72,8 +77,10 @@ export function CartProvider({ children }) {
       });
       if (!res.ok) throw new Error('Update qty failed');
       await fetchCart();
+      showNotification('🔄 Cart updated'); // ✅
     } catch (err) {
       setError(err.message);
+      showNotification('❌ Failed to update quantity');
     } finally {
       setLoading(false);
     }
@@ -94,21 +101,21 @@ export function CartProvider({ children }) {
       }
       const receipt = await res.json();
       await fetchCart(); // clear cart
+      showNotification('✅ Checkout successful');
       return receipt;
     } catch (err) {
       setError(err.message);
+      showNotification('❌ Checkout failed');
       throw err;
     } finally {
       setLoading(false);
     }
   }
 
-  // Fetch cart initially
   useEffect(() => {
     fetchCart();
   }, []);
 
-  // Value passed to context
   const value = {
     cart,
     loading,
