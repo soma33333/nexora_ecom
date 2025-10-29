@@ -57,7 +57,6 @@ nexora-ecom/
 
 ### Setup Instructions
 
-```bash
 cd backend
 cp .env.example .env
 npm install
@@ -102,7 +101,7 @@ cd frontend
 npm install
 npm run dev
 Open in browser:
-👉 http://localhost:5173
+👉 http://localhost:3000
 
 🔐 Authentication Flow
 Register via /register — creates user & returns JWT
@@ -135,7 +134,7 @@ npm run client	Run frontend
 npm run build	Build frontend for production
 
 ⚠️ Notes
-Backend runs on port 5000, frontend on 5173 (Vite default)
+Backend runs on port 5000, frontend on 3000
 
 If deploying, update your API base URLs accordingly
 
