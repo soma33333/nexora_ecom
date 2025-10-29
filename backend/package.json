@@ -9,9 +9,11 @@
     "seed": "node seed/seedProducts.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.6.1",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.0.0",
     "morgan": "^1.10.0"
   },
