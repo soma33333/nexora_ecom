@@ -1,0 +1,59 @@
+[33mcommit 701b5b20df753da7f817c232f4b78ea88d07a65c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 23:43:31 2025 +0530
+
+    extented with user auth functionality
+
+[33mcommit 6b9f38921b606f720842b4f220950b1c4e2744be[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 10:11:45 2025 +0530
+
+    Removed .env from tracking and updated .gitignore
+
+[33mcommit 37144c98a6049cb0b80951c1d057d56588d94316[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 10:00:35 2025 +0530
+
+    initial features coded
+
+[33mcommit 865c5c2c00b65a95d2fb4b0f9357ecc54c227966[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 09:59:51 2025 +0530
+
+    added images url to products
+
+[33mcommit 0aae815fb0c0a0445123ec3e4e4c341dc33b174e[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 09:59:08 2025 +0530
+
+    basic functiomalies comepleted
+
+[33mcommit 9659de7ff83108ab7de8dd24797dadc66d6947d4[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 09:18:15 2025 +0530
+
+    installation
+
+[33mcommit e2dfd002e7f40d1a0d0fb1b0196dbff8ea66d41f[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 09:15:48 2025 +0530
+
+    insatalation
+
+[33mcommit d41858d6bf4228f83df0f536df7c3f67fc1b4deb[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 09:14:33 2025 +0530
+
+    installation
+
+[33mcommit 5da85005d1309ed1ea42bc3d9b50ce84a7f2bde2[m
+Author: soma33333 <soma3333aa@gmail.com>
+Date:   Tue Oct 28 08:54:26 2025 +0530
+
+    initial setup
+
+[33mcommit 1f74fd613f48c7da53e65b917cb7ef70c2930cbc[m
+Author: Somashekar N <soma3333aa@gmail.com>
+Date:   Tue Oct 28 08:14:17 2025 +0530
+
+    Initial commit
