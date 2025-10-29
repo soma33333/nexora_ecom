@@ -434,3 +434,72 @@ button:hover {
     width: 100%;
   }
 }
+/* ===== HEADER ===== */
+.app-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0b5cff;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* ===== HEADER BUTTONS ===== */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-btn {
+  background: #fff;
+  color: #0b5cff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-btn.secondary {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.auth-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .header-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .auth-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
